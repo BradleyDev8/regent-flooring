@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <filter id="g1"><feTurbulence type="turbulence" baseFrequency="0.02 0.6" numOctaves="3" seed="5"></feTurbulence><feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.30  0 0 0 0 0.18  0 0 0 0.5 0"></feColorMatrix></filter>
+  </defs>
+  <rect width="400" height="300" fill="#A67A4B"></rect>
+  <rect width="400" height="300" filter="url(#g1)" opacity="0.8"></rect>
+  <g stroke="#6b4a2a" stroke-width="1.5" opacity="0.35">
+    <line x1="0" y1="75" x2="400" y2="75"></line>
+    <line x1="0" y1="150" x2="400" y2="150"></line>
+    <line x1="0" y1="225" x2="400" y2="225"></line>
+    <line x1="120" y1="0" x2="120" y2="75"></line>
+    <line x1="250" y1="75" x2="250" y2="150"></line>
+    <line x1="80" y1="150" x2="80" y2="225"></line>
+    <line x1="300" y1="225" x2="300" y2="300"></line>
+  </g>
+</svg>

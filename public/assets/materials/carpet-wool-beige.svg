@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <filter id="n1"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"></feTurbulence><feColorMatrix values="0 0 0 0 0.78  0 0 0 0 0.68  0 0 0 0 0.52  0 0 0 0.5 0"></feColorMatrix></filter>
+    <pattern id="twist" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#8a735a" opacity="0.3"></circle>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="#C5AE8B"></rect>
+  <rect width="400" height="300" fill="url(#twist)"></rect>
+  <rect width="400" height="300" filter="url(#n1)" opacity="0.6"></rect>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8DFC9"></stop>
+      <stop offset="100%" stop-color="#D4C7A8"></stop>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A67A4B"></stop>
+      <stop offset="100%" stop-color="#6B4A2A"></stop>
+    </linearGradient>
+    <filter id="rg"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="4"></feTurbulence><feColorMatrix values="0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0 0.2  0 0 0 0.15 0"></feColorMatrix></filter>
+  </defs>
+  <rect width="1200" height="500" fill="url(#wall)"></rect>
+  <polygon points="0,500 1200,500 1200,800 0,800" fill="url(#floor)"></polygon>
+  
+  <rect x="200" y="400" width="500" height="160" rx="12" fill="#3A2E23"></rect>
+  <rect x="215" y="380" width="120" height="40" rx="8" fill="#5a4636"></rect>
+  <rect x="355" y="380" width="120" height="40" rx="8" fill="#5a4636"></rect>
+  <rect x="495" y="380" width="120" height="40" rx="8" fill="#5a4636"></rect>
+  
+  <rect x="180" y="560" width="600" height="180" rx="4" fill="#C5AE8B" opacity="0.85"></rect>
+  
+  <rect x="850" y="120" width="260" height="280" fill="#F7F2EA" stroke="#3A2E23" stroke-width="4"></rect>
+  <line x1="980" y1="120" x2="980" y2="400" stroke="#3A2E23" stroke-width="4"></line>
+  <line x1="850" y1="260" x2="1110" y2="260" stroke="#3A2E23" stroke-width="4"></line>
+  
+  <rect x="780" y="480" width="60" height="80" rx="4" fill="#6B4A2A"></rect>
+  <ellipse cx="810" cy="460" rx="45" ry="35" fill="#4a6b3d"></ellipse>
+  
+  <rect width="1200" height="800" filter="url(#rg)" opacity="0.25"></rect>
+</svg>

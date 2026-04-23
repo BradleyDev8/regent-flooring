@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <pattern id="hp" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect x="0" y="0" width="30" height="14" fill="#8A5F32" stroke="#5a3d1f" stroke-width="0.8"></rect>
+      <rect x="30" y="0" width="30" height="14" fill="#A67A4B" stroke="#5a3d1f" stroke-width="0.8"></rect>
+      <rect x="0" y="14" width="30" height="14" fill="#A67A4B" stroke="#5a3d1f" stroke-width="0.8"></rect>
+      <rect x="30" y="14" width="30" height="14" fill="#8A5F32" stroke="#5a3d1f" stroke-width="0.8"></rect>
+    </pattern>
+    <filter id="hg"><feTurbulence type="turbulence" baseFrequency="0.02 0.6" numOctaves="2" seed="7"></feTurbulence><feColorMatrix values="0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0 0.1  0 0 0 0.3 0"></feColorMatrix></filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#hp)"></rect>
+  <rect width="400" height="300" filter="url(#hg)" opacity="0.4"></rect>
+</svg>
