@@ -1,11 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { buttonClasses } from "./Button";
 
 const scrollTo = (id: string) => {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 };
+
+const LINKS = [
+  { id: "ranges", label: "Ranges" },
+  { id: "spotlight", label: "Ardmore" },
+  { id: "showroom", label: "Showroom" },
+];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,60 +26,55 @@ export default function Nav() {
 
   return (
     <>
-      <div className="promo">
+      <div className="bg-espresso text-parchment text-center text-xs font-semibold leading-none uppercase tracking-[0.08em] py-2.5 px-4 overflow-hidden">
         Newtownards showroom open{" "}
-        <strong style={{ color: "var(--parchment)", fontWeight: 700 }}>
-          Mon–Sat
-        </strong>
-        <span className="dot">·</span>
+        <strong className="text-parchment font-bold">Mon–Sat</strong>
+        <span className="text-brass mx-2.5">·</span>
         Over 400 samples in store
-        <span className="dot">·</span>
+        <span className="text-brass mx-2.5">·</span>
         Free home measure across Co. Down
       </div>
-      <div className={`nav-wrap ${scrolled ? "scrolled" : ""}`} data-anim="nav">
-        <nav className="nav">
+      <div
+        data-anim="nav"
+        className={`sticky top-0 z-50 transition-[backdrop-filter,background-color,box-shadow,border-color] duration-200 border-b ${
+          scrolled
+            ? "bg-parchment/80 backdrop-blur-md shadow-subtle border-border-light"
+            : "border-transparent"
+        }`}
+      >
+        <nav className="flex items-center gap-7 py-2.5 px-8 h-[76px] max-w-[1400px] mx-auto max-[680px]:px-5 max-[680px]:gap-4 max-[680px]:h-16">
           <a
-            className="nav-logo"
+            className="flex items-center gap-2.5 cursor-pointer"
             href="#top"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <img src="/assets/regent-logo.png" alt="Regent Flooring" />
+            <img
+              src="/assets/regent-logo.png"
+              alt="Regent Flooring"
+              className="w-[220px] h-[60px] object-cover object-center"
+            />
           </a>
-          <div className="nav-links">
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("ranges");
-              }}
-              href="#ranges"
-            >
-              Ranges
-            </a>
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("spotlight");
-              }}
-              href="#spotlight"
-            >
-              Ardmore
-            </a>
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("showroom");
-              }}
-              href="#showroom"
-            >
-              Showroom
-            </a>
+          <div className="flex gap-[26px] ml-3 max-[680px]:hidden">
+            {LINKS.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(id);
+                }}
+                className="font-semibold text-base leading-[1.35] text-coffee cursor-pointer py-1 border-b-2 border-transparent hover:text-black hover:border-brass transition-[border-color,color] duration-200"
+              >
+                {label}
+              </a>
+            ))}
           </div>
-          <div className="nav-right">
+          <div className="ml-auto flex items-center gap-[18px]">
             <button
-              className="btn btn-pill btn-sm"
+              className={buttonClasses("pill", "sm")}
               onClick={() => scrollTo("showroom")}
             >
               Contact us

@@ -13,8 +13,7 @@ export default function SiteAnimations() {
     const ctx = gsap.context(() => {
       const heroTL = gsap.timeline({ defaults: { ease: "power3.out" } });
       heroTL
-        .to('[data-anim="hero-eyebrow"]', { opacity: 1, y: 0, duration: 0.6 })
-        .to('[data-anim="hero-title"]', { opacity: 1, y: 0, duration: 0.9 }, "-=0.35")
+        .to('[data-anim="hero-title"]', { opacity: 1, y: 0, duration: 0.9 })
         .to('[data-anim="hero-sub"]', { opacity: 1, y: 0, duration: 0.7 }, "-=0.55")
         .to('[data-anim="hero-ctas"]', { opacity: 1, y: 0, duration: 0.6 }, "-=0.45")
         .to('[data-anim="hero-trust"]', { opacity: 1, y: 0, duration: 0.6 }, "-=0.4")
@@ -25,22 +24,22 @@ export default function SiteAnimations() {
         )
         .to('[data-anim="hero-swatches"]', { opacity: 1, y: 0, duration: 0.7 }, "-=0.35");
 
-      gsap.to(".hero-bg", {
+      gsap.to('[data-anim="hero-bg"]', {
         yPercent: 18,
         ease: "none",
         scrollTrigger: {
-          trigger: ".hero",
+          trigger: "#top",
           start: "top top",
           end: "bottom top",
           scrub: true,
         },
       });
 
-      gsap.to(".hero-img img", {
+      gsap.to('[data-anim="hero-img"] img', {
         yPercent: -8,
         ease: "none",
         scrollTrigger: {
-          trigger: ".hero",
+          trigger: "#top",
           start: "top top",
           end: "bottom top",
           scrub: true,
@@ -60,7 +59,7 @@ export default function SiteAnimations() {
 
       sectionReveal(
         '[data-anim="measure-eyebrow"], [data-anim="measure-title"], [data-anim="measure-lede"], [data-anim="measure-form"], [data-anim="measure-trust"]',
-        ".measure",
+        "#measure",
         0.1
       );
 
@@ -69,12 +68,12 @@ export default function SiteAnimations() {
         scale: 1,
         duration: 1,
         ease: "power3.out",
-        scrollTrigger: { trigger: ".measure", start: "top 80%", once: true },
+        scrollTrigger: { trigger: "#measure", start: "top 80%", once: true },
       });
 
       sectionReveal(
         '#ranges [data-anim="section-eyebrow"], #ranges [data-anim="section-title"], #ranges [data-anim="section-lede"]',
-        "#ranges .section-header"
+        "#ranges"
       );
 
       gsap.to('[data-anim="range-card"]', {
@@ -83,7 +82,11 @@ export default function SiteAnimations() {
         duration: 0.8,
         ease: "power3.out",
         stagger: 0.1,
-        scrollTrigger: { trigger: ".ranges-grid", start: "top 82%", once: true },
+        scrollTrigger: {
+          trigger: '[data-anim="ranges-grid"]',
+          start: "top 82%",
+          once: true,
+        },
       });
 
       gsap.to('[data-anim="spotlight-img"]', {
@@ -91,16 +94,16 @@ export default function SiteAnimations() {
         scale: 1,
         duration: 1.1,
         ease: "power3.out",
-        scrollTrigger: { trigger: ".spotlight", start: "top 75%", once: true },
+        scrollTrigger: { trigger: "#spotlight", start: "top 75%", once: true },
       });
 
       sectionReveal(
         '[data-anim="spotlight-eyebrow"], [data-anim="spotlight-title"], [data-anim="spotlight-lede"], [data-anim="spotlight-specs"], [data-anim="spotlight-ctas"]',
-        ".spotlight",
+        "#spotlight",
         0.12
       );
 
-      gsap.to(".spotlight-glow", {
+      gsap.to('[data-anim="spotlight-glow"]', {
         x: 60,
         y: -30,
         scale: 1.08,
@@ -109,11 +112,11 @@ export default function SiteAnimations() {
         duration: 7,
         ease: "sine.inOut",
       });
-      gsap.to(".spotlight-glow", {
+      gsap.to('[data-anim="spotlight-glow"]', {
         yPercent: 25,
         ease: "none",
         scrollTrigger: {
-          trigger: ".spotlight",
+          trigger: "#spotlight",
           start: "top bottom",
           end: "bottom top",
           scrub: true,
@@ -122,7 +125,7 @@ export default function SiteAnimations() {
 
       sectionReveal(
         '[data-anim="showroom-eyebrow"], [data-anim="showroom-title"], [data-anim="showroom-lede"], [data-anim="showroom-details"], [data-anim="showroom-ctas"]',
-        ".showroom",
+        "#showroom",
         0.1
       );
 
@@ -131,7 +134,7 @@ export default function SiteAnimations() {
         scale: 1,
         duration: 1,
         ease: "power3.out",
-        scrollTrigger: { trigger: ".showroom", start: "top 75%", once: true },
+        scrollTrigger: { trigger: "#showroom", start: "top 75%", once: true },
       });
 
       gsap.fromTo(
@@ -142,9 +145,9 @@ export default function SiteAnimations() {
           opacity: 1,
           duration: 1,
           ease: "bounce.out",
-          scrollTrigger: { trigger: ".showroom", start: "top 55%", once: true },
+          scrollTrigger: { trigger: "#showroom", start: "top 55%", once: true },
           delay: 0.2,
-        }
+        },
       );
 
       gsap.to('[data-anim="pin-pulse"]', {
@@ -155,11 +158,11 @@ export default function SiteAnimations() {
         repeat: -1,
       });
 
-      gsap.to(".showroom-bg", {
+      gsap.to('[data-anim="showroom-bg"]', {
         yPercent: 10,
         ease: "none",
         scrollTrigger: {
-          trigger: ".showroom",
+          trigger: "#showroom",
           start: "top bottom",
           end: "bottom top",
           scrub: true,

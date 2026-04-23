@@ -14,9 +14,9 @@ export default function Home() {
       <Nav />
       <main className="main">
         <Hero />
-        <FreeMeasure />
         <Ranges />
         <Spotlight />
+        <FreeMeasure />
         <Showroom today={today} />
       </main>
       <Footer />
